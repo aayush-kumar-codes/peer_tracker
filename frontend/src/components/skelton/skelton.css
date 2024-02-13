@@ -1,0 +1,31 @@
+.list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.section-title {
+    margin-top: 5px;
+}
+
+.card {
+    width: calc(33% - 10px);
+    margin: 5px 0;
+}
+
+
+/* Tablets */
+@media (max-width: 1000px) {
+    .card {
+        width: calc(50% - 22px);
+    }
+}
+
+/* Mobiles */
+@media (max-width: 640px) {
+    .card {
+        width: 100%;
+    }
+}
