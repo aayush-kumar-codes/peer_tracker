@@ -5,19 +5,17 @@ import { MyContext } from '../../context/AuthProvider';
 import SkeletonCard from '../skelton';
 import HistoricalTSRTable from '../historicalTSRTable.jsx';
 
-
-
 const HistoricalAwardsSummaryTwentyToEighteen = ({ historicalData }) => {
-  const { historicalLoading,
+  const {
+    historicalLoading,
     historicalTSRTableData2020,
     historicalTSRTableData2019,
-    historicalTSRTableData2018 } = useContext(MyContext)
-
+    historicalTSRTableData2018
+  } = useContext(MyContext)
 
   const [inputData, setInputData] = useState("")
   const [tableDataShow, setTableDataShow] = useState(false)
   const [accorId, setAccorId] = useState(null)
-
 
   const handleAccor = (id) => {
     if (accorId === id) {
@@ -27,8 +25,6 @@ const HistoricalAwardsSummaryTwentyToEighteen = ({ historicalData }) => {
       setTableDataShow(true)
     }
   }
-
-  console.log(accorId, "###########");
 
   return (
     <>
@@ -42,7 +38,7 @@ const HistoricalAwardsSummaryTwentyToEighteen = ({ historicalData }) => {
               <div className=" border border-[#4DA8C3] bg-[#4DA8C3] text-white text-xl py-2  rounded-lg shadow-md mt-2 shadow-gray-400">
                 <p>TSR: {ele.ClientTSR}</p>
                 <p className=" text-lg">{ele.Percentile} Percentile</p>
-                <p className="flex items-center justify-center gap-2">Rank: #1.80 out of 7<CgAddR class=" bg-violet-500 shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75 cursor-pointer rounded-md" size={26} onClick={() => handleAccor(historicalData.PlanId)} /></p>
+                <p className="flex items-center justify-center gap-2">Rank: #1.80 out of 7<CgAddR className="bg-violet-500 shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75 cursor-pointer rounded-md" size={26} onClick={() => handleAccor(historicalData.PlanId)} /></p>
                 <p>Payout: {ele.Payout}</p>
                 <p >{inputData && `*My Value: $ ${(inputData * ele.PayoutDecimal * ele.ClientTSRDecimal * 100).toFixed(2)}`}</p>
               </div>

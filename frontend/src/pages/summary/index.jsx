@@ -11,7 +11,7 @@ const Summary = () => {
     <div className="px-8">
       <div className="flex justify-between items-center py-8">
         <div className="text-3xl">
-          {summaryDataYear2023?.List?.map(ele => <p>Calculations as of {ele.DisplayDateString}</p>)}
+          {summaryDataYear2023?.List?.map((ele, i) => <p key={i}>Calculations as of {ele.DisplayDateString}</p>)}
         </div>
         <div>
           <img src={NewmontLogo} alt="NewmontLogo" />

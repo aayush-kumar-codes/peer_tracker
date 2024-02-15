@@ -7,52 +7,50 @@ const MyContext = createContext();
 const ContextProvider = ({ children }) => {
     const [summaryLoading, SetSummaryLoading] = useState(true)
     const [historicalLoading, SetHistoricalLoading] = useState(true)
+    const [historicalTableLoading, SetHistoricalTableLoading] = useState(true)
     const [corpTableLoader, setCorpTableLoader] = useState(true)
     const [minerTableLoader, setMinerTableLoader] = useState(true)
+    const [downloadTsrBtnStatus, setDownloadTsrBtnStatus] = useState(true)
+    const [downloadPeerTsrBtnStatus, setDownloadPeerTsrBtnStatus] = useState(true)
+    const [downloadHistoTsrBtnStatus, setDownloadHistoTsrBtnStatus] = useState(true)
     const [tsrChartYear2023, setTsrChartYear2023] = useState("")
     const [tsrChartYear2022, setTsrChartYear2022] = useState("")
     const [tsrChartYear2021, setTsrChartYear2021] = useState("")
-
     const [PayoutChartYear2023, setPayoutChartYear2023] = useState("")
     const [PayoutChartYear2022, setPayoutChartYear2022] = useState("")
     const [PayoutChartYear2021, setPayoutChartYear2021] = useState("")
-
     const [tsrBarChartYear2023, setTsrBarChartYear2023] = useState("")
     const [tsrBarChartYear2022, setTsrBarChartYear2022] = useState("")
     const [tsrBarChartYear2021, setTsrBarChartYear2021] = useState("")
-
-
     const [summaryDataYear2023, setSummaryDataYear2023] = useState("")
     const [summaryDataYear2022, setSummaryDataYear2022] = useState("")
     const [summaryDataYear2021, setSummaryDataYear2021] = useState("")
-
-
-
     const [historicalDataYear2020, setHistoricalDataYear2020] = useState("")
     const [historicalDataYear2019, setHistoricalDataYear2019] = useState("")
     const [historicalDataYear2018, setHistoricalDataYear2018] = useState("")
     const [historicalDataYear2017, setHistoricalDataYear2017] = useState("")
     const [historicalDataYear2016, setHistoricalDataYear2016] = useState("")
-
-
     const [historicalTSRTableData2020, setHistoricalTSRTableData2020] = useState("")
     const [historicalTSRTableData2019, setHistoricalTSRTableData2019] = useState("")
     const [historicalTSRTableData2018, setHistoricalTSRTableData2018] = useState("")
-
     const [goldCorpTableData2023, setGoldCorpTableData2023] = useState("")
     const [goldCorpTableData2022, setGoldCorpTableData2022] = useState("")
     const [goldCorpTableData2021, setGoldCorpTableData2021] = useState("")
-
-
     const [goldMinerTableData2023, setGoldMinerTableData2023] = useState("")
     const [goldMinerTableData2022, setGoldMinerTableData2022] = useState("")
     const [goldMinerTableData2021, setGoldMinerTableData2021] = useState("")
-
+    const [downloadTsrFile2023, setDownloadTsrFile2023] = useState([])
+    const [downloadTsrFile2022, setDownloadTsrFile2022] = useState([])
+    const [downloadTsrFile2021, setDownloadTsrFile2021] = useState([])
+    const [downloadPeerTsrFile2023, setDownloadPeerTsrFile2023] = useState([])
+    const [downloadPeerTsrFile2022, setDownloadPeerTsrFile2022] = useState([])
+    const [downloadPeerTsrFile2021, setDownloadPeerTsrFile2021] = useState([])
+    const [downloadHistoTsrFile2023, setDownloadHistoTsrFile2023] = useState([])
+    const [downloadHistoTsrFile2022, setDownloadHistoTsrFile2022] = useState([])
+    const [downloadHistoTsrFile2021, setDownloadHistoTsrFile2021] = useState([])
     const id = [4386, 4092, 3714,]
     const HistoricalDataid = [3366, 3004, 2515, 2607, 2665]
     const HistoricalTSRTableDataid = [3366, 3004, 2515]
-
-
 
 
     const fetchSummaryData = async (id) => {
@@ -228,15 +226,74 @@ const ContextProvider = ({ children }) => {
             setHistoricalTSRTableData2020(values[0])
             setHistoricalTSRTableData2019(values[1])
             setHistoricalTSRTableData2018(values[2])
+            SetHistoricalTableLoading(false)
         });
     }, [])
 
 
 
-  
+    const downloadTsrFile = async (id) => {
+        try {
+            const response = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/tsr_file/`, { id })
+            return response.data;
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    useEffect(() => {
+        let data = id.map(async (val) => (
+            await downloadTsrFile(val)
+        ))
+        Promise.all(data).then((values) => {
+            setDownloadTsrFile2023(values[0])
+            setDownloadTsrFile2022(values[1])
+            setDownloadTsrFile2021(values[2])
+            setDownloadTsrBtnStatus(false)
+        });
+    }, [])
 
 
 
+    const downloadPeerTsrFile = async (id) => {
+        try {
+            const response = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/peer_tsr_file/`, { id })
+            return response.data;
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    useEffect(() => {
+        let data = id.map(async (val) => (
+            await downloadPeerTsrFile(val)
+        ))
+        Promise.all(data).then((values) => {
+            setDownloadPeerTsrFile2023(values[0])
+            setDownloadPeerTsrFile2022(values[1])
+            setDownloadPeerTsrFile2021(values[2])
+            setDownloadPeerTsrBtnStatus(false)
+        });
+    }, [])
+
+
+    const downloadHistoTsrFile = async (id) => {
+        try {
+            const response = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/histo_tsr_file/`, { id })
+            return response.data;
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    useEffect(() => {
+        let data = id.map(async (val) => (
+            await downloadHistoTsrFile(val)
+        ))
+        Promise.all(data).then((values) => {
+            setDownloadHistoTsrFile2023(values[0])
+            setDownloadHistoTsrFile2022(values[1])
+            setDownloadHistoTsrFile2021(values[2])
+            setDownloadHistoTsrBtnStatus(false)
+        });
+    }, [])
 
     return (
         <MyContext.Provider
@@ -269,6 +326,7 @@ const ContextProvider = ({ children }) => {
                 historicalTSRTableData2020,
                 historicalTSRTableData2019,
                 historicalTSRTableData2018,
+                historicalTableLoading,
 
                 goldCorpTableData2023,
                 goldCorpTableData2022,
@@ -279,6 +337,22 @@ const ContextProvider = ({ children }) => {
                 goldMinerTableData2022,
                 goldMinerTableData2021,
                 minerTableLoader,
+
+
+                downloadTsrFile2023,
+                downloadTsrFile2022,
+                downloadTsrFile2021,
+                downloadTsrBtnStatus,
+
+                downloadPeerTsrFile2023,
+                downloadPeerTsrFile2022,
+                downloadPeerTsrFile2021,
+                downloadPeerTsrBtnStatus,
+
+                downloadHistoTsrFile2023,
+                downloadHistoTsrFile2022,
+                downloadHistoTsrFile2021,
+                downloadHistoTsrBtnStatus,
             }}
         >
             {children}

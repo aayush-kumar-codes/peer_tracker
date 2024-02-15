@@ -1,4 +1,3 @@
-import axios from "axios";
 import { Line } from "react-chartjs-2"
 import {
     Chart as ChartJS,
@@ -23,26 +22,33 @@ ChartJS.register(
 )
 
 
-const PayoutChart = ({payoutChartYear}) => {
+const PayoutChart = ({ payoutChartYear }) => {
     const [labels, setLabels] = useState([]);
     const [dataSets, setDataSets] = useState([]);
     const [loading, setLoading] = useState(true)
 
-    const fetchPayoutChartData = (payoutChartYear) => {
-        const currentDate = new Date()
-        const lastYearDate = new Date(currentDate)
-        lastYearDate.setFullYear(lastYearDate.getFullYear() - 1)
-        const dateLabels = []
-        for (
-            let date = new Date(lastYearDate);
-            date <= currentDate;
-            date.setDate(date.getDate() + 1)
-        ) {
-            dateLabels.push(date.toLocaleDateString("en-US"))
+    const fetchChartData = (payoutChartYear) => {
+        const daysGap = 49;
+        const today = new Date();
+        const nextTwoYears = new Date(today.getFullYear() + 2, today.getMonth(), today.getDate());
+    
+        const dateLabels = payoutChartYear?.List?.[0]?.DataPoints?.map(ele => {
+          const date = new Date(ele.x);
+          return `${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getDate().toString().padStart(2, '0')}/${date.getFullYear()}`;
+        });
+    
+        const nextTwoYearsLabels = [];
+        let currentDate = new Date(dateLabels[dateLabels.length - 1]);
+    
+        while (currentDate < nextTwoYears) {
+          currentDate.setDate(currentDate.getDate() + daysGap);
+          nextTwoYearsLabels.push(`${(currentDate.getMonth() + 1)}/${currentDate.getDate()}/${currentDate.getFullYear()}`);
         }
-        setLabels(dateLabels)
+    
+        const allDataLabels = dateLabels ? [...dateLabels, ...nextTwoYearsLabels] : nextTwoYearsLabels;
+        setLabels(allDataLabels);
 
-        const colors = ["#CC2A36", "#4F372D", "#00A0B0", "#EB6841", "#EDC951"]
+        const colors = ["#CC2A36", "#33BEFF"]
         const chartDatasets = payoutChartYear && payoutChartYear.List.map((item, index) => ({
             label: item.Name,
             data: item.DataPoints.map((dataPoint) => dataPoint.y),
@@ -56,7 +62,7 @@ const PayoutChart = ({payoutChartYear}) => {
 
     useEffect(() => {
         if (payoutChartYear) {
-            fetchPayoutChartData(payoutChartYear)
+            fetchChartData(payoutChartYear)
         }
     }, [payoutChartYear])
 

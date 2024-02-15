@@ -1,29 +1,35 @@
-import { Fragment } from "react";
+import { useContext } from "react";
+import { MyContext } from "../../context/AuthProvider";
+import SkeletonTable from "../skelton/tableSkelton";
 
 const HistoricalTSRTable = ({ tableDataShow }) => {
-    console.log(tableDataShow, "@#################3");
+    const { historicalTableLoading } = useContext(MyContext)
     return (
         <>
-            <table className="w-[100%] table-auto border-collapse border">
-                <thead className="bg-[#4DA8C3]  text-white">
-                    <tr>
-                        <th className="text-left py-1 pl-2">Peer Name</th>
-                        <th className="text-right py-1 pr-2">TSR</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {tableDataShow && tableDataShow?.List?.map((elem) => elem?.TSRs?.map((ele, i) => {
-                          const backgroundColor = ele.PeerName === "Newmont" ? "#73E11B" : "transparent";
-                        return (
-                            <tr key={i} style={{backgroundColor}}>
-                                <td className='pl-2 text-left py-1'>{ele.PeerName}</td>
-                                <td className="align-right py-1 text-right pr-2">{((ele.TSR) * 100).toFixed(2) + "%"}</td>
-                            </tr>
-                        )
-                    })
-                    )}
-                </tbody>
-            </table>
+            {historicalTableLoading ? <SkeletonTable qty={8} width={300} />
+                :
+                <table className="w-[100%] table-auto border-collapse border text-[14px] mt-3">
+                    <thead className="bg-[#4DA8C3]  text-white">
+                        <tr>
+                            <th className="text-left py-1 pl-1">Peer Name</th>
+                            <th className="text-right py-1 pr-1">TSR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tableDataShow && tableDataShow?.List?.map((elem) => elem?.TSRs?.map((ele, i) => {
+                            const backgroundColor1 = i % 2 !== 0 ? "#E6F3F6" : "transparent"
+                            const backgroundColor = ele.PeerName === "Newmont" ? "#73E11B" : backgroundColor1;
+
+                            return (
+                                <tr key={i} style={{ backgroundColor }} className="text-[#272827]">
+                                    <td className='pl-1 text-left py-1 '>{ele.PeerName}</td>
+                                    <td className="align-right py-1 text-right pr-1">{((ele.TSR) * 100).toFixed(2) + "%"}</td>
+                                </tr>
+                            )
+                        })
+                        )}
+                    </tbody>
+                </table>}
         </>
     )
 }

@@ -26,20 +26,26 @@ const TsrChart = ({ tsrChartYear }) => {
   const [dataSets, setDataSets] = useState([])
   const [loading, setLoading] = useState(true)
 
-
   const fetchChartData = (tsrChartYear) => {
-    const currentDate = new Date()
-    const lastYearDate = new Date(currentDate)
-    lastYearDate.setFullYear(lastYearDate.getFullYear() - 1)
-    const dateLabels = []
-    for (
-      let date = new Date(lastYearDate);
-      date <= currentDate;
-      date.setDate(date.getDate() + 1)
-    ) {
-      dateLabels.push(date.toLocaleDateString("en-US"))
+    const daysGap = 49;
+    const today = new Date();
+    const nextTwoYears = new Date(today.getFullYear() + 2, today.getMonth(), today.getDate());
+
+    const dateLabels = tsrChartYear?.List?.[0]?.DataPoints?.map(ele => {
+      const date = new Date(ele.x);
+      return `${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getDate().toString().padStart(2, '0')}/${date.getFullYear()}`;
+    });
+
+    const nextTwoYearsLabels = [];
+    let currentDate = new Date(dateLabels[dateLabels.length - 1]);
+
+    while (currentDate < nextTwoYears) {
+      currentDate.setDate(currentDate.getDate() + daysGap);
+      nextTwoYearsLabels.push(`${(currentDate.getMonth() + 1)}/${currentDate.getDate()}/${currentDate.getFullYear()}`);
     }
-    setLabels(dateLabels)
+
+    const allDataLabels = dateLabels ? [...dateLabels, ...nextTwoYearsLabels] : nextTwoYearsLabels;
+    setLabels(allDataLabels);
 
     const colors = ["#CC2A36", "#4F372D", "#00A0B0", "#EB6841", "#EDC951"]
     const chartDatasets = tsrChartYear && tsrChartYear.List.map((item, index) => ({
@@ -54,7 +60,7 @@ const TsrChart = ({ tsrChartYear }) => {
   }
 
   useEffect(() => {
-    if(tsrChartYear){
+    if (tsrChartYear) {
       fetchChartData(tsrChartYear)
     }
   }, [tsrChartYear])
@@ -85,7 +91,7 @@ const TsrChart = ({ tsrChartYear }) => {
             case 4386:
               return -0.3
             case 4092:
-              return -0.4
+              return -0.6
             case 3714:
               return -0.6
           }
@@ -122,6 +128,7 @@ const TsrChart = ({ tsrChartYear }) => {
             <p>Loading TSR History....</p>
           </div >
         ) : (
+
           <div className=" bg-white py-3 px-4">
             <Line data={data} options={options} />
           </div>

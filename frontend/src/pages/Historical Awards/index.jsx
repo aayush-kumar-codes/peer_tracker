@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import NewmontLogo from "../../assets/NewmontLogo.png";
 import HistoricalAwardsSummarySeventeenToSixteen from "../../components/historicalAwardSummary17-16.jsx/index.jsx";
 import HistoricalAwardsSummaryTwentyToEighteen from "../../components/historicalAwardSummary20-18.jsx";
@@ -6,7 +6,8 @@ import { MyContext } from "../../context/AuthProvider.jsx";
 
 
 const HistoricalAwards = () => {
-    const { historicalDataYear2020,
+    const {
+        historicalDataYear2020,
         historicalDataYear2019,
         historicalDataYear2018,
         historicalDataYear2017,
@@ -27,7 +28,7 @@ const HistoricalAwards = () => {
         <div className="px-8">
             <div className="flex justify-between items-center py-8">
                 <div className="text-3xl">
-                    {summaryDataYear2023?.List?.map((ele,i) => <p key={i}>Calculations as of {ele.DisplayDateString}</p>)}
+                    {summaryDataYear2023?.List?.map((ele, i) => <p key={i}>Calculations as of {ele.DisplayDateString}</p>)}
                 </div>
                 <div>
                     <img src={NewmontLogo} alt="NewmontLogo" />
@@ -36,7 +37,7 @@ const HistoricalAwards = () => {
             <div className="flex justify-between w-[100%] px-4">
                 {DataYearWise.map((ele) => {
                     return (
-                        <div key={ele.id} className="w-[30%] text-center">
+                        <div key={ele.id} className="w-[33.33%] text-center mx-4">
                             <HistoricalAwardsSummaryTwentyToEighteen
                                 historicalData={ele.year}
                             />

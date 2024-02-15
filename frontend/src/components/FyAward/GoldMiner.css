@@ -1,16 +1,16 @@
 
-  .fraction {
-      display: inline-block;
-      vertical-align:bottom; 
-      margin-left: 0.3em;
-      text-align: center;
-    & > span {
-      display: block;
-      padding-top: 0.15em;
-    }
-    & span{
-      &.fdn {
-        border-top: thin solid black;
-      }
-    }
+.fraction {
+  display: inline-block;
+  vertical-align:bottom; 
+  margin-left: 0.3em;
+  text-align: center;
+& > span {
+  display: block;
+  padding-top: 0.15em;
+}
+& span{
+  &.fdn {
+    border-top: thin solid black;
   }
+}
+}

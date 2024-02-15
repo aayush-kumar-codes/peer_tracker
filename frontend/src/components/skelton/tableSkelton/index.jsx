@@ -1,20 +1,19 @@
-import React from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-const SkeletonItem = ({ qty}) => {
+const SkeletonItem = ({ qty, width }) => {
   return (
     <section>
       <p className="text-center">Loading....</p>
       <h2>
-      <Skeleton height={35} width={500}/>
+        <Skeleton height={35} width={width} />
       </h2>
-      <ul className="flex justify-between flex-wrap p-0">
+      <ul className="">
         {Array(qty)
           .fill()
           .map((item, index) => (
             <li className="my-[2px]" key={index}>
-              <Skeleton height={25} width={500}/>
+              <Skeleton height={25} width={width} />
             </li>
           ))}
       </ul>
@@ -22,8 +21,8 @@ const SkeletonItem = ({ qty}) => {
   );
 };
 
-const SkeletonTable = ({qty}) => {
-  return (<SkeletonItem qty={qty}/>);
+const SkeletonTable = ({ qty }) => {
+  return (<SkeletonItem qty={qty} />);
 };
 
 export default SkeletonTable;

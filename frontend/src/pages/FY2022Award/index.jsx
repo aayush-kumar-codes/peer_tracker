@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext} from "react";
 import { MyContext } from "../../context/AuthProvider";
 import TsrChart from "../../components/FyAward/TsrChart";
 import TsrBarChart from '../../components/FyAward/TsrBarChart';
@@ -6,16 +6,25 @@ import PayoutChart from '../../components/FyAward/PayoutChart';
 import GoldCorpTable from '../../components/FyAward/GoldCorpTable';
 import GoldMinerTable from '../../components/FyAward/GoldMinerTable';
 import AwardHeader from "../../components/FyAward/AwardHeader";
-import { buttonData } from "../../utils/buttonData";
+import DownloadTsrFileData from "../../components/FyAward/DownloadTsrFileData";
+import DownloadPeerTsrFileData from "../../components/FyAward/DownloadPeerTsrFileData";
+import DownloadHistoTsrFileData from "../../components/FyAward/DownloadHistoTsrFileData";
 
 
 const FY2022Award = () => {
-  const { tsrChartYear2022,
+  const {
+    tsrChartYear2022,
     PayoutChartYear2022,
     tsrBarChartYear2022,
     goldCorpTableData2022,
     goldMinerTableData2022,
-    summaryDataYear2022 } = useContext(MyContext);
+    summaryDataYear2022,
+    downloadTsrFile2022,
+    downloadPeerTsrFile2022,
+    downloadHistoTsrFile2022
+  } = useContext(MyContext);
+
+
 
   return (
     <div className='p-5'>
@@ -25,7 +34,9 @@ const FY2022Award = () => {
         <GoldMinerTable tableData={goldMinerTableData2022} calData={goldCorpTableData2022} />
       </div>
       <div className="flex items-center justify-center gap-4 mt-8">
-        {buttonData.map(ele => <button key={ele.id} className="bg-[#4DA8C3]  text-white py-2 px-3 rounded-md font-bold">{ele.value}</button>)}
+        <DownloadTsrFileData TSRFileYear={downloadTsrFile2022} />
+        <DownloadPeerTsrFileData PeerTsrFileYear={downloadPeerTsrFile2022}/>
+       <DownloadHistoTsrFileData HistoTsrFileYear={downloadHistoTsrFile2022}/>
       </div>
       <div className=" mt-8 border border-gray-300">
         <TsrChart tsrChartYear={tsrChartYear2022} />

@@ -6,15 +6,22 @@ import PayoutChart from '../../components/FyAward/PayoutChart';
 import GoldCorpTable from '../../components/FyAward/GoldCorpTable';
 import GoldMinerTable from '../../components/FyAward/GoldMinerTable';
 import AwardHeader from '../../components/FyAward/AwardHeader';
-import { buttonData } from "../../utils/buttonData";
+import DownloadTsrFileData from "../../components/FyAward/DownloadTsrFileData";
+import DownloadHistoTsrFileData from "../../components/FyAward/DownloadHistoTsrFileData";
+import DownloadPeerTsrFileData from "../../components/FyAward/DownloadPeerTsrFileData";
 
 const FY2021Award = () => {
-  const { tsrChartYear2021,
+  const {
+    tsrChartYear2021,
     PayoutChartYear2021,
     tsrBarChartYear2021,
     goldCorpTableData2021,
     goldMinerTableData2021,
-    summaryDataYear2021 } = useContext(MyContext);
+    summaryDataYear2021,
+    downloadTsrFile2021,
+    downloadPeerTsrFile2021,
+    downloadHistoTsrFile2021
+  } = useContext(MyContext);
 
   return (
     <div className='p-5'>
@@ -24,7 +31,9 @@ const FY2021Award = () => {
         <GoldMinerTable tableData={goldMinerTableData2021} calData={goldCorpTableData2021} />
       </div>
       <div className="flex items-center justify-center gap-4 mt-8">
-        {buttonData.map(ele => <button  key={ele.id} className="bg-[#4DA8C3]  text-white py-2 px-3 rounded-md font-bold">{ele.value}</button>)}
+        <DownloadTsrFileData TSRFileYear={downloadTsrFile2021} />
+        <DownloadPeerTsrFileData PeerTsrFileYear={downloadPeerTsrFile2021} />
+        <DownloadHistoTsrFileData HistoTsrFileYear={downloadHistoTsrFile2021} />
       </div>
       <div className=" mt-8 border border-gray-300">
         <TsrChart tsrChartYear={tsrChartYear2021} />
@@ -40,3 +49,5 @@ const FY2021Award = () => {
 }
 
 export default FY2021Award
+
+
