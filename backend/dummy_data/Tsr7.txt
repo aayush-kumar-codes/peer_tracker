@@ -1,0 +1,49 @@
+{
+  "PlanId": 2607,
+  "List": [
+    {
+      "TSRs": [
+        {
+          "PeerName": "Zhaojin Mining Industry Company Limited",
+          "TSR": -0.097914797905,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "K92 Mining Inc.",
+          "TSR": -0.101174134953,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "AngloGold Ashanti Limited",
+          "TSR": -0.117801376292,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Barrick Gold Corporation",
+          "TSR": -0.120666434435,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Hecla Mining Company",
+          "TSR": -0.319639456047,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "First Majestic Silver Corp.",
+          "TSR": -0.355066842163,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "SSR Mining Inc.",
+          "TSR": -0.389382936949,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "Endeavour Silver Corp.",
+          "TSR": -0.497866634158,
+          "color": "#081078"
+        }
+      ]
+    }
+  ]
+}

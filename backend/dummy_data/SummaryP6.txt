@@ -1,0 +1,14 @@
+{
+    "PlanId": 2515,
+    "List": [
+        {
+            "AwardName": "FY2018 Award",
+            "DisplayDateString": "02/15/2018",
+            "ClientTSR": "79.00%",
+            "Percentile": "12th",
+            "Payout": "0.0%",
+            "PayoutDecimal": 0.0,
+            "ClientTSRDecimal": 0.78985656565
+        }
+    ]
+}

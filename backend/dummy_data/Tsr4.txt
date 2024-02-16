@@ -1,0 +1,44 @@
+{
+  "PlanId": 3366,
+  "List": [
+    {
+      "TSRs": [
+        {
+          "PeerName": "Eldorado Gold Corporation",
+          "TSR": 0.332258205117,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Aya Gold & Silver Inc.",
+          "TSR": 0.320923972369,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Kinross Gold Corporation",
+          "TSR": 0.30690469941,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Gold Fields Limited",
+          "TSR": 0.300343191959,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Silver Lake Resources Limited",
+          "TSR": -0.097641758998,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Pan American Silver Corp.",
+          "TSR": -0.176874017301,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "Torex Gold Resources Inc.",
+          "TSR": -0.194046859238,
+          "color": "#081078"
+        }
+      ]
+    }
+  ]
+}

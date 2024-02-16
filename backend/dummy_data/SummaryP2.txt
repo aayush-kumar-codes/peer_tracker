@@ -1,0 +1,14 @@
+{
+    "PlanId": 4092,
+    "List": [
+        {
+            "AwardName": "FY2022 Award",
+            "DisplayDateString": "02/15/2022",
+            "ClientTSR": "-76.00%",
+            "Percentile": "6th",
+            "Payout": "0.0%",
+            "PayoutDecimal": 0.0,
+            "ClientTSRDecimal": -0.760010545063
+        }
+    ]
+}

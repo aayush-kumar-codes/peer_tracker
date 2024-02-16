@@ -29,13 +29,13 @@ const DownloadPeerTsrFileData = ({ PeerTsrFileYear }) => {
         <>
             <button
                 disabled={downloadPeerTsrBtnStatus}
-                onClick={() => convertToJsonAndDownloadExcel(fileData.length > 0 && fileData)}
+                // onClick={() => convertToJsonAndDownloadExcel(fileData.length > 0 && fileData)}
                 className={`bg-[#4DA8C3] text-white py-2 px-3 rounded-md font-bold flex items-center gap-1 
             ${downloadPeerTsrBtnStatus ? 'cursor-not-allowed' : 'cursor-pointer'}`}
-                title={downloadPeerTsrBtnStatus ? "Please wait..." : ""}
+                // title={downloadPeerTsrBtnStatus ? "Please wait..." : ""}
             >
                 <span className="ml-2">Peer TSRs</span>
-                {!downloadPeerTsrBtnStatus && <MdFileDownload />}
+                {/* {!downloadPeerTsrBtnStatus && <MdFileDownload />} */}
             </button>
         </>
     )

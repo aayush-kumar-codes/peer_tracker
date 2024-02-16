@@ -1,0 +1,33 @@
+{
+    "PlanId": 4386,
+    "List": [
+        {
+            "CalculationType": "Beginning Average",
+            "CalculationValue": "$49.01"
+        },
+        {
+            "CalculationType": "Ending Average",
+            "CalculationValue": "$35.98"
+        },
+        {
+            "CalculationType": "Dividends",
+            "CalculationValue": "$1.60"
+        },
+        {
+            "CalculationType": "TSR",
+            "CalculationValue": "-26.59%"
+        },
+        {
+            "CalculationType": "Rank",
+            "CalculationValue": "#43 of 47"
+        },
+        {
+            "CalculationType": "Percentile",
+            "CalculationValue": "8th"
+        },
+        {
+            "CalculationType": "Payout",
+            "CalculationValue": "0.0%"
+        }
+    ]
+}

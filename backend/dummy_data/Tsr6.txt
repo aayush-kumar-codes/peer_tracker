@@ -1,0 +1,54 @@
+{
+  "PlanId": 2515,
+  "List": [
+    {
+      "TSRs": [
+        {
+          "PeerName": "New Gold Inc.",
+          "TSR": 0.199152912907,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Alamos Gold Inc.",
+          "TSR": 0.152682601197,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Osisko Gold Royalties Ltd",
+          "TSR": 0.118496951396,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Equinox Gold Corp.",
+          "TSR": 0.082489287106,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Endeavour Mining plc",
+          "TSR": -0.205443280158,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "Franco-Nevada Corporation",
+          "TSR": -0.211281041141,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "Coeur Mining, Inc.",
+          "TSR": -0.240161001789,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "Newmont Corporation",
+          "TSR": -0.265876238762,
+          "color": "#0BB30B"
+        },
+        {
+          "PeerName": "Hecla Mining Company",
+          "TSR": -0.319639456047,
+          "color": "#081078"
+        }
+      ]
+    }
+  ]
+}

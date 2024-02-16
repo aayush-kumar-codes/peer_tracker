@@ -30,10 +30,10 @@ const HistoricalAwards = () => {
                 <div className="text-3xl">
                     {summaryDataYear2023?.List?.map((ele, i) => <p key={i}>Calculations as of {ele.DisplayDateString}</p>)}
                 </div>
-                <div>
+                {/* <div>
                     <img src={NewmontLogo} alt="NewmontLogo" />
-                </div>
-            </div>
+                </div> */}
+            </div> 
             <div className="flex justify-between w-[100%] px-4">
                 {DataYearWise.map((ele) => {
                     return (

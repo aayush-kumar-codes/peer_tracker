@@ -1,0 +1,44 @@
+{
+  "PlanId": 2665,
+  "List": [
+    {
+      "TSRs": [
+        {
+          "PeerName": "Kinross Gold Corporation",
+          "TSR": 0.30690469941,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Gold Fields Limited",
+          "TSR": 0.300343191959,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Franco-Nevada Corporation",
+          "TSR": -0.211281041141,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "Coeur Mining, Inc.",
+          "TSR": -0.240161001789,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "Newmont Corporation",
+          "TSR": -0.265876238762,
+          "color": "#0BB30B"
+        },
+        {
+          "PeerName": "Hecla Mining Company",
+          "TSR": -0.319639456047,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "First Majestic Silver Corp.",
+          "TSR": -0.355066842163,
+          "color": "#081078"
+        }
+      ]
+    }
+  ]
+}

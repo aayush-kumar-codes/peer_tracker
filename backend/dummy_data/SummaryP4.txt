@@ -1,0 +1,14 @@
+{
+    "PlanId": 3366,
+    "List": [
+        {
+            "AwardName": "FY2020 Award",
+            "DisplayDateString": "02/15/2020",
+            "ClientTSR": "58.70%",
+            "Percentile": "14th",
+            "Payout": "0.0%",
+            "PayoutDecimal": 0.0,
+            "ClientTSRDecimal": 0.586987455555
+        }
+    ]
+}

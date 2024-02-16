@@ -47,7 +47,7 @@ const TsrChart = ({ tsrChartYear }) => {
     const allDataLabels = dateLabels ? [...dateLabels, ...nextTwoYearsLabels] : nextTwoYearsLabels;
     setLabels(allDataLabels);
 
-    const colors = ["#CC2A36", "#4F372D", "#00A0B0", "#EB6841", "#EDC951"]
+    const colors = ["#F01B0C", "#0BB30B", "#990c9c", "#081078", "#cc5608"]
     const chartDatasets = tsrChartYear && tsrChartYear.List.map((item, index) => ({
       label: item.Name,
       data: item.DataPoints.map((dataPoint) => dataPoint.y),

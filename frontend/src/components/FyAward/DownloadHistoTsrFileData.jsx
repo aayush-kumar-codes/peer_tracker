@@ -29,13 +29,13 @@ const DownloadHistoTsrFileData = ({ HistoTsrFileYear }) => {
         <>
             <button
                 disabled={downloadHistoTsrBtnStatus}
-                onClick={() => convertToJsonAndDownloadExcel(fileData.length > 0 && fileData)}
+                // onClick={() => convertToJsonAndDownloadExcel(fileData.length > 0 && fileData)}
                 className={`bg-[#4DA8C3] text-white py-2 px-3 rounded-md font-bold flex items-center gap-1 
         ${downloadHistoTsrBtnStatus ? 'cursor-not-allowed' : 'cursor-pointer'}`}
-                title={downloadHistoTsrBtnStatus ? "Please wait..." : ""}
+                // title={downloadHistoTsrBtnStatus ? "Please wait..." : ""}
             >
                 <span className="ml-2">Historical TSR</span>
-                {!downloadHistoTsrBtnStatus && <MdFileDownload />}
+                {/* {!downloadHistoTsrBtnStatus && <MdFileDownload />} */}
             </button>
         </>
     )

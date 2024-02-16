@@ -1,0 +1,14 @@
+{
+    "PlanId": 4386,
+    "List": [
+        {
+            "AwardName": "FY2023 Award",
+            "DisplayDateString": "02/15/2024",
+            "ClientTSR": "-27.00%",
+            "Percentile": "8th",
+            "Payout": "0.0%",
+            "PayoutDecimal": 0.0,
+            "ClientTSRDecimal": -0.270010545063
+        }
+    ]
+}

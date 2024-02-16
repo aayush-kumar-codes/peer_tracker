@@ -12,9 +12,9 @@ const AwardHeader = ({ year }) => {
                 )
             })
             }
-            <div>
+            {/* <div>
                 <img src={newMountlogo} alt="newMountlogo" />
-            </div>
+            </div> */}
         </div >
     )
 }

@@ -1,0 +1,14 @@
+{
+    "PlanId": 3714,
+    "List": [
+        {
+            "AwardName": "FY2021 Award",
+            "DisplayDateString": "02/15/2021",
+            "ClientTSR": "-45.30%",
+            "Percentile": "2th",
+            "Payout": "2.6%",
+            "PayoutDecimal": 0.026542878,
+            "ClientTSRDecimal": -0.45265847552
+        }
+    ]
+}

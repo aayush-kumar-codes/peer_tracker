@@ -48,10 +48,10 @@ const PayoutChart = ({ payoutChartYear }) => {
         const allDataLabels = dateLabels ? [...dateLabels, ...nextTwoYearsLabels] : nextTwoYearsLabels;
         setLabels(allDataLabels);
 
-        const colors = ["#CC2A36", "#33BEFF"]
-        const chartDatasets = payoutChartYear && payoutChartYear.List.map((item, index) => ({
+        const colors = ["#c40cbb", "#6f6dde"]
+        const chartDatasets = payoutChartYear && payoutChartYear?.List?.map((item, index) => ({
             label: item.Name,
-            data: item.DataPoints.map((dataPoint) => dataPoint.y),
+            data: item?.DataPoints?.map((dataPoint) => dataPoint.y),
             borderColor: colors[index % colors.length],
             backgroundColor: colors[index % colors.length],
             pointRadius: 0,

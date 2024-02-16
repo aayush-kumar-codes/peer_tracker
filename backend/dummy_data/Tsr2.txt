@@ -1,0 +1,244 @@
+{
+  "PlanId": 4092,
+  "List": [
+    {
+      "TSRs": [
+        {
+          "PeerName": "Compañía de Minas Buenaventura S.A.A.",
+          "TSR": 0.955087986034,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Harmony Gold Mining Company Limited",
+          "TSR": 0.752622024648,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Eldorado Gold Corporation",
+          "TSR": 0.332258205117,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Aya Gold & Silver Inc.",
+          "TSR": 0.320923972369,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Kinross Gold Corporation",
+          "TSR": 0.30690469941,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Gold Fields Limited",
+          "TSR": 0.300343191959,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Wesdome Gold Mines Ltd.",
+          "TSR": 0.291802183164,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "New Gold Inc.",
+          "TSR": 0.199152912907,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Alamos Gold Inc.",
+          "TSR": 0.152682601197,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Osisko Gold Royalties Ltd",
+          "TSR": 0.118496951396,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Equinox Gold Corp.",
+          "TSR": 0.082489287106,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Wheaton Precious Metals Corp.",
+          "TSR": 0.081560972144,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Northern Star Resources Limited",
+          "TSR": 0.048456717758,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "DRDGOLD Limited",
+          "TSR": 0.030010529721,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Dundee Precious Metals Inc.",
+          "TSR": 0.014786405296,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Evolution Mining Limited",
+          "TSR": 0.007864077,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Capricorn Metals Ltd",
+          "TSR": -0.020768033352,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Agnico Eagle Mines Limited",
+          "TSR": -0.027414539516,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "OceanaGold Corporation",
+          "TSR": -0.031244488087,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Gold Road Resources Limited",
+          "TSR": -0.033473768021,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Zijin Mining Group Company Limited",
+          "TSR": -0.034268878105,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "SilverCrest Metals Inc.",
+          "TSR": -0.037441077441,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Regis Resources Limited",
+          "TSR": -0.03966177611,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Centamin plc",
+          "TSR": -0.04136936428,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "IAMGOLD Corporation",
+          "TSR": -0.058416602613,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Royal Gold, Inc.",
+          "TSR": -0.063912434894,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Silver Lake Resources Limited",
+          "TSR": -0.097641758998,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Zhaojin Mining Industry Company Limited",
+          "TSR": -0.097914797905,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "K92 Mining Inc.",
+          "TSR": -0.101174134953,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "AngloGold Ashanti Limited",
+          "TSR": -0.117801376292,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Barrick Gold Corporation",
+          "TSR": -0.120666434435,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Fortuna Silver Mines Inc.",
+          "TSR": -0.125456355792,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Centerra Gold Inc.",
+          "TSR": -0.137665520498,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "Sandstorm Gold Ltd.",
+          "TSR": -0.144599551124,
+          "color": "#8C0855"
+        },
+        {
+          "PeerName": "West African Resources Limited",
+          "TSR": -0.145794449462,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "Perseus Mining Limited",
+          "TSR": -0.173642588747,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "Pan American Silver Corp.",
+          "TSR": -0.176874017301,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "Torex Gold Resources Inc.",
+          "TSR": -0.194046859238,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "B2Gold Corp.",
+          "TSR": -0.205096817365,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "Endeavour Mining plc",
+          "TSR": -0.205443280158,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "Franco-Nevada Corporation",
+          "TSR": -0.211281041141,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "Coeur Mining, Inc.",
+          "TSR": -0.240161001789,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "Newmont Corporation",
+          "TSR": -0.265876238762,
+          "color": "#0BB30B"
+        },
+        {
+          "PeerName": "Hecla Mining Company",
+          "TSR": -0.319639456047,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "First Majestic Silver Corp.",
+          "TSR": -0.355066842163,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "SSR Mining Inc.",
+          "TSR": -0.389382936949,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "Endeavour Silver Corp.",
+          "TSR": -0.497866634158,
+          "color": "#081078"
+        }
+      ]
+    }
+  ]
+}

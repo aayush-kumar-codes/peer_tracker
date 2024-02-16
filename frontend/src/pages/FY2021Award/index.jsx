@@ -1,4 +1,4 @@
-import { useContext} from "react";
+import { useContext, useEffect, useState } from "react";
 import { MyContext } from "../../context/AuthProvider";
 import TsrChart from "../../components/FyAward/TsrChart";
 import TsrBarChart from '../../components/FyAward/TsrBarChart';
@@ -6,9 +6,10 @@ import PayoutChart from '../../components/FyAward/PayoutChart';
 import GoldCorpTable from '../../components/FyAward/GoldCorpTable';
 import GoldMinerTable from '../../components/FyAward/GoldMinerTable';
 import AwardHeader from '../../components/FyAward/AwardHeader';
-import DownloadTsrFileData from "../../components/FyAward/DownloadTsrFileData";
 import DownloadHistoTsrFileData from "../../components/FyAward/DownloadHistoTsrFileData";
 import DownloadPeerTsrFileData from "../../components/FyAward/DownloadPeerTsrFileData";
+import DownloadTsrFileData from "../../components/FyAward/DownloadTsrFileData";
+
 
 const FY2021Award = () => {
   const {

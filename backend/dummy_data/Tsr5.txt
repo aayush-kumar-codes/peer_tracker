@@ -1,0 +1,44 @@
+{
+  "PlanId": 3004,
+  "List": [
+    {
+      "TSRs": [
+        {
+          "PeerName": "Kinross Gold Corporation",
+          "TSR": 0.30690469941,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Gold Fields Limited",
+          "TSR": 0.300343191959,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Wesdome Gold Mines Ltd.",
+          "TSR": 0.291802183164,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "New Gold Inc.",
+          "TSR": 0.199152912907,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Alamos Gold Inc.",
+          "TSR": 0.152682601197,
+          "color": "#F01B0C"
+        },
+        {
+          "PeerName": "Hecla Mining Company",
+          "TSR": -0.319639456047,
+          "color": "#081078"
+        },
+        {
+          "PeerName": "First Majestic Silver Corp.",
+          "TSR": -0.355066842163,
+          "color": "#081078"
+        }
+      ]
+    }
+  ]
+}

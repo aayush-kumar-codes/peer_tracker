@@ -39,7 +39,7 @@ const FY2023Award = () => {
             <div className=" mt-8 border border-gray-300">
                 <TsrChart tsrChartYear={tsrChartYear2023} />
             </div>
-            <div className=" mt-8 border border-gray-300">
+            <div className=" mt-8 border border-gray-300"> 
                 <PayoutChart payoutChartYear={PayoutChartYear2023} />
             </div>
             <div className=" mt-8 border border-gray-300">

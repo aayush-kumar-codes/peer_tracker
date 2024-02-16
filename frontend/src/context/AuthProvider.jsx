@@ -153,6 +153,7 @@ const ContextProvider = ({ children }) => {
             await fetchPayoutChartData(val)
         ))
         Promise.all(data).then((values) => {
+            // console.log(values,"pppppppppppppppppppppppaaaaaaaaaaaaaaaa");
             setPayoutChartYear2023(values[0])
             setPayoutChartYear2022(values[1])
             setPayoutChartYear2021(values[2])
@@ -175,6 +176,7 @@ const ContextProvider = ({ children }) => {
             await TSRBarChartData(val)
         ))
         Promise.all(data).then((values) => {
+            console.log(values,"##########################33");
             setTsrBarChartYear2023(values[0])
             setTsrBarChartYear2022(values[1])
             setTsrBarChartYear2021(values[2])

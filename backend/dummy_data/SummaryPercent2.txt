@@ -1,0 +1,25 @@
+{
+    "PlanId": 4092,
+    "List": [
+        {
+            "SubPlanList": [
+                {
+                    "PayoutBasis": 0.9,
+                    "TSR": 0.875421564221
+                },
+                {
+                    "PayoutBasis": 0.75,
+                    "TSR": 0.569284908548
+                },
+                {
+                    "PayoutBasis": 0.55,
+                    "TSR": -0.74855927939
+                },
+                {
+                    "PayoutBasis": 0.25,
+                    "TSR": -0.12365724878
+                }
+            ]
+        }
+    ]
+}
