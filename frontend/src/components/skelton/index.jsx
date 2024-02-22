@@ -6,7 +6,7 @@ import "../skelton/skelton.css"
 const SkeletonItem = ({ qty, extraNode }) => {
   return (
     <section>
-      <p>Loading....</p>
+      <p className="text-white">Loading....</p>
       <h2 className="section-title">
         <Skeleton height={30} width={200} />
       </h2>

@@ -6,11 +6,11 @@ import FY2022Award from "./pages/FY2022Award"
 import FY2021Award from "./pages/FY2021Award"
 import Footer from "./components/common/footer"
 import Summary from "./pages/summary"
+import "./App.css"
 
 function App() {
-
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="w-[100%] mx-auto">
       <BrowserRouter>
         <Navbar />
         <Routes>

@@ -6,9 +6,9 @@ import PayoutChart from '../../components/FyAward/PayoutChart';
 import GoldCorpTable from '../../components/FyAward/GoldCorpTable';
 import GoldMinerTable from '../../components/FyAward/GoldMinerTable';
 import AwardHeader from "../../components/FyAward/AwardHeader";
-import DownloadHistoTsrFileData from "../../components/FyAward/DownloadHistoTsrFileData";
-import DownloadPeerTsrFileData from "../../components/FyAward/DownloadPeerTsrFileData";
 import DownloadTsrFileData from "../../components/FyAward/DownloadTsrFileData";
+import DownloadPeerTsrFileData from "../../components/FyAward/DownloadPeerTsrFileData";
+import DownloadHistoTsrFileData from "../../components/FyAward/DownloadHistoTsrFileData";
 
 
 
@@ -28,9 +28,9 @@ const FY2022Award = () => {
 
 
   return (
-    <div className='p-5'>
+    <div className='p-5 max-w-6xl mx-auto'>
       <AwardHeader year={summaryDataYear2022} />
-      <div className="flex justify-between w-[100%] mt-8 gap-8 px-7 ">
+      <div className="flex justify-between  mt-8 gap-8 px-7 ">
         <GoldCorpTable tableData={goldCorpTableData2022} />
         <GoldMinerTable tableData={goldMinerTableData2022} calData={goldCorpTableData2022} />
       </div>
@@ -39,14 +39,14 @@ const FY2022Award = () => {
         <DownloadPeerTsrFileData PeerTsrFileYear={downloadPeerTsrFile2022}/>
        <DownloadHistoTsrFileData HistoTsrFileYear={downloadHistoTsrFile2022}/>
       </div>
-      <div className=" mt-8 border border-gray-300">
+      <div className=" mt-8">
         <TsrChart tsrChartYear={tsrChartYear2022} />
       </div>
-      <div className=" mt-8 border border-gray-300">
+      <div className=" mt-8">
         <PayoutChart payoutChartYear={PayoutChartYear2022} />
 
       </div>
-      <div className=" mt-8 border border-gray-300">
+      <div className=" mt-8">
         <TsrBarChart tsrBarChartYear={tsrBarChartYear2022} />
       </div>
     </div>

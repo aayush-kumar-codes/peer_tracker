@@ -1,4 +1,6 @@
-
+.pending{
+  color: #ffff;
+}
 .active {
   font-weight:500;
   color: #E61B22;

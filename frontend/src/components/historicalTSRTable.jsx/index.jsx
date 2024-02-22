@@ -11,17 +11,17 @@ const HistoricalTSRTable = ({ tableDataShow }) => {
                 <table className="w-[100%] table-auto border-collapse border text-[14px] mt-3">
                     <thead className="bg-[#4DA8C3]  text-white">
                         <tr>
-                            <th className="text-left py-1 pl-1">Peer Name</th>
-                            <th className="text-right py-1 pr-1">TSR</th>
+                            <th className="text-left py-2 pl-1">Peer Name</th>
+                            <th className="text-right py-2 pr-1">TSR</th>
                         </tr>
                     </thead>
                     <tbody>
                         {tableDataShow && tableDataShow?.List?.map((elem) => elem?.TSRs?.map((ele, i) => {
-                            const backgroundColor1 = i % 2 !== 0 ? "#E6F3F6" : "transparent"
-                            const backgroundColor = ele.PeerName === "Newmont" ? "#73E11B" : backgroundColor1;
+                            const isBgColor = i % 2 !== 0
+                            // const backgroundColor = ele.PeerName === "Newmont" ? "#73E11B" : backgroundColor1;
 
                             return (
-                                <tr key={i} style={{ backgroundColor }} className="text-[#272827]">
+                                <tr key={i} className={isBgColor ? "bg-[#E6F3F6] text-black" : "bg-[#393d47] text-white"}>
                                     <td className='pl-1 text-left py-1 '>{ele.PeerName}</td>
                                     <td className="align-right py-1 text-right pr-1">{((ele.TSR) * 100).toFixed(2) + "%"}</td>
                                 </tr>

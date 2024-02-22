@@ -176,7 +176,7 @@ const ContextProvider = ({ children }) => {
             await TSRBarChartData(val)
         ))
         Promise.all(data).then((values) => {
-            console.log(values,"##########################33");
+            // console.log(values,"##########################33");
             setTsrBarChartYear2023(values[0])
             setTsrBarChartYear2022(values[1])
             setTsrBarChartYear2021(values[2])
@@ -228,7 +228,7 @@ const ContextProvider = ({ children }) => {
             setHistoricalTSRTableData2020(values[0])
             setHistoricalTSRTableData2019(values[1])
             setHistoricalTSRTableData2018(values[2])
-            SetHistoricalTableLoading(false)
+            SetHistoricalTableLoading(false) 
         });
     }, [])
 

@@ -25,7 +25,7 @@ const FY2023Award = () => {
     } = useContext(MyContext);
 
     return (
-        <div className='p-5'>
+        <div className='p-5 max-w-6xl mx-auto'>
             <AwardHeader year={summaryDataYear2023} />
             <div className="flex justify-between w-[100%] mt-8 gap-8 px-7 ">
                 <GoldCorpTable tableData={goldCorpTableData2023} />
@@ -36,13 +36,13 @@ const FY2023Award = () => {
                 <DownloadPeerTsrFileData PeerTsrFileYear={downloadPeerTsrFile2023} />
                 <DownloadHistoTsrFileData HistoTsrFileYear={downloadHistoTsrFile2023} />
             </div>
-            <div className=" mt-8 border border-gray-300">
+            <div className=" mt-8">
                 <TsrChart tsrChartYear={tsrChartYear2023} />
             </div>
-            <div className=" mt-8 border border-gray-300"> 
+            <div className=" mt-8">
                 <PayoutChart payoutChartYear={PayoutChartYear2023} />
             </div>
-            <div className=" mt-8 border border-gray-300">
+            <div className=" mt-8">
                 <TsrBarChart tsrBarChartYear={tsrBarChartYear2023} />
             </div>
         </div>

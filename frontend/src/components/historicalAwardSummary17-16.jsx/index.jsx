@@ -13,12 +13,12 @@ const HistoricalAwardsSummarySeventeenToSixteen = ({ historicalData }) => {
     return (
         <>
             {historicalLoading ?
-               <SkeletonCard qty={1}/>
+                <SkeletonCard qty={1} />
                 :
                 historicalData && historicalData.List && historicalData.List.length > 0 && (
                     <>
-                        <p className="text-[#4D4F53] text-2xl flex items-center justify-center font-medium">{historicalData.List[0].AwardName}<BsInfoLg size={30} color="#000" /></p>
-                        <div className=" border border-[#4DA8C3] bg-[#4DA8C3] text-white text-xl py-3  rounded-lg shadow-md mt-2 shadow-gray-400">
+                        <p className="text-white text-2xl flex items-center justify-center font-medium">{historicalData.List[0].AwardName}<BsInfoLg size={30} color="#fff" /></p>
+                        <div className=" border border-gray-400 bg-[#3a879e] text-white text-xl py-3  rounded-lg">
                             {historicalData.List[0] && (
                                 <div>
                                     <p className="text-3xl">{historicalData.List[0].ClientName}</p>
@@ -32,7 +32,7 @@ const HistoricalAwardsSummarySeventeenToSixteen = ({ historicalData }) => {
                             )}
                         </div>
                         <div className="py-2">
-                            <p className="text-[17px]">Target Shares :</p>
+                            <p className="text-[17px] text-white">Target Shares :</p>
                             <input
                                 type="number"
                                 value={inputData}
@@ -40,7 +40,7 @@ const HistoricalAwardsSummarySeventeenToSixteen = ({ historicalData }) => {
                                 name="customInput0"
                                 min="0"
                                 placeholder="Input Target Shares"
-                                className="border border-gray-400 rounded-sm text-lg p-[2px] pl-1"
+                                className="border border-gray-400 rounded-md text-lg p-[2px] pl-1 bg-gray-200 [-moz-appearance:_textfield] [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
                             />
                         </div>
                     </>

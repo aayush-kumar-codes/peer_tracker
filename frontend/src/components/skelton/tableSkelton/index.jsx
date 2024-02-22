@@ -4,8 +4,8 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 const SkeletonItem = ({ qty, width }) => {
   return (
-    <section>
-      <p className="text-center">Loading....</p>
+    <section style={{ width: `${width}px`}}>
+      <p className="text-center text-white">Loading....</p>
       <h2>
         <Skeleton height={35} width={width} />
       </h2>
@@ -22,8 +22,8 @@ const SkeletonItem = ({ qty, width }) => {
   );
 };
 
-const SkeletonTable = ({ qty }) => {
-  return (<SkeletonItem qty={qty} />);
+const SkeletonTable = ({ qty,width }) => {
+  return (<SkeletonItem qty={qty} width={width} />);
 };
 
 export default SkeletonTable;

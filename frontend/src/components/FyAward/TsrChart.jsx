@@ -50,7 +50,7 @@ const TsrChart = ({ tsrChartYear }) => {
     const colors = ["#F01B0C", "#0BB30B", "#990c9c", "#081078", "#cc5608"]
     const chartDatasets = tsrChartYear && tsrChartYear.List.map((item, index) => ({
       label: item.Name,
-      data: item.DataPoints.map((dataPoint) => dataPoint.y),
+      data: item.DataPoints.map((dataPoint) => (dataPoint.y * 100).toFixed(2)),
       borderColor: colors[index % colors.length],
       backgroundColor: colors[index % colors.length],
       pointRadius: 0,
@@ -64,6 +64,9 @@ const TsrChart = ({ tsrChartYear }) => {
       fetchChartData(tsrChartYear)
     }
   }, [tsrChartYear])
+
+
+
 
   const options = {
     responsive: true,
@@ -86,29 +89,11 @@ const TsrChart = ({ tsrChartYear }) => {
       },
 
       y: {
-        min: (() => {
-          switch (tsrChartYear.PlanId) {
-            case 4386:
-              return -0.3
-            case 4092:
-              return -0.6
-            case 3714:
-              return -0.6
-          }
-        })(),
-        max: (() => {
-          switch (tsrChartYear.PlanId) {
-            case 4386:
-              return 0.3
-            case 4092:
-              return 1.2
-            case 3714:
-              return 1
-          }
-        })(),
+        min: Math.floor(Math.min(...dataSets.flatMap(dataset => dataset.data))),
+        max: Math.ceil(Math.max(...dataSets.flatMap(dataset => dataset.data))),
         ticks: {
           callback: function (value) {
-            return Math.round(value * 100) + "%"
+            return Math.round(value) + "%";
           },
         },
       },
@@ -120,16 +105,17 @@ const TsrChart = ({ tsrChartYear }) => {
     datasets: dataSets,
   }
 
+
   return (
     <>
       {
         loading ? (
-          <div>
-            <p>Loading TSR History....</p>
+          <div className="mt-[80px]">
+            <p className="text-white">Loading TSR History....</p>
           </div >
         ) : (
 
-          <div className=" bg-white py-3 px-4">
+          <div className=" bg-[#E6F3F6] py-3 px-4 rounded-xl">
             <Line data={data} options={options} />
           </div>
         )}

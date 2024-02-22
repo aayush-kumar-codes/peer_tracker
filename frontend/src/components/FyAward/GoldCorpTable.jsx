@@ -10,10 +10,10 @@ const GoldCorpTable = ({ tableData }) => {
             {corpTableLoader ? <SkeletonTable qty={6} width={500} />
                 :
                 <table className="w-[100%] border-collapse border text-[14px]">
-                    <thead className="bg-[#4DA8C3]  text-white">
+                    <thead className="bg-[#3A879E]  text-white">
                         <tr>
-                            <th className="text-left pl-2 py-1">Newmont Goldcorp Calculation</th>
-                            <th className="text-right pr-2 py-1">Result</th>
+                            <th className="text-left pl-2 py-2">Newmont Goldcorp Calculation</th>
+                            <th className="text-right pr-2 py-2">Result</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -23,7 +23,7 @@ const GoldCorpTable = ({ tableData }) => {
                             }
                             const isBgColor = i === 1 || i === 3 || i === 6;
                             return (
-                                <tr key={i} className={isBgColor ? "bg-[#E6F3F6]" : ""}>
+                                <tr key={i} className={isBgColor ? "bg-[#E6F3F6] text-black" : "text-white"}>
                                     <td className="pl-2 py-1">{ele.CalculationType}</td>
                                     <td className="align-right text-right pr-2 py-1">{ele.CalculationValue}</td>
                                 </tr>

@@ -13,17 +13,17 @@ const GoldMinerTable = ({ tableData, calData }) => {
             {minerTableLoader ? <SkeletonTable qty={4} width={500} />
                 :
                 <table className="w-[100%] border-collapse border text-[14px]">
-                    <thead className="bg-[#4DA8C3]  text-white">
+                    <thead className="bg-[#3A879E]  text-white">
                         <tr>
-                            <th className="text-left pl-2 py-1 font-[600]">VanEck Vectors Gold Miners ETF (GDX)</th>
-                            <th className="text-right pr-2 py-1 font-[600]">Result</th>
+                            <th className="text-left pl-2 py-2 font-[600]">VanEck Vectors Gold Miners ETF (GDX)</th>
+                            <th className="text-right pr-2 py-2 font-[600]">Result</th>
                         </tr>
                     </thead>
                     <tbody>
                         {tableData && tableData?.List?.map((ele) => ele.SubPlanList?.map((elem, i) => {
                             const isBgColor = i % 2 !== 0;
                             return (
-                                <tr key={i} className={isBgColor ? "bg-[#E6F3F6]" : ""}>
+                                <tr key={i} className={isBgColor ? "bg-[#E6F3F6] text-black" : "text-white"}>
                                     <td className="pl-2 py-1">{(elem.PayoutBasis * 100).toFixed(0)}th Percentile</td>
                                     <td className="align-right text-right pr-2 py-1">{((elem.TSR) * 100).toFixed(1) + "%"}</td>
                                 </tr>
@@ -32,7 +32,7 @@ const GoldMinerTable = ({ tableData, calData }) => {
                     </tbody>
                 </table>}
 
-            <div className='text-center py-4 font-[500] flex items-center justify-center'>
+            <div className='text-center py-4 font-[500] flex items-center justify-center text-white'>
                 {calData && calData.List && calData?.List.length > 0 && (
                     <>
                         <div className='flex gap-1'>

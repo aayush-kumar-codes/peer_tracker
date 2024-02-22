@@ -32,17 +32,6 @@ const TsrBarChart = ({ tsrBarChartYear }) => {
         }
     }, [tsrBarChartYear]);
 
-    const minMaxValues = (() => {
-        switch (tsrBarChartYear.PlanId) {
-            case 4386:
-                return [-95, 100];
-            case 4092:
-                return [-120, 80];
-            case 3714:
-                return [-120, 80];
-        }
-    })();
-
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
             return (
@@ -54,12 +43,12 @@ const TsrBarChart = ({ tsrBarChartYear }) => {
         }
         return null;
     };
-
+ 
     return (
         <>
             {loading ?
                 <div><p>Loading Peer History....</p></div>
-                : <div className='h-[450px] p-4'>
+                : <div className='h-[450px] p-4 bg-[#E6F3F6] rounded-xl'>
                     <ResponsiveContainer width="100%" height="100%">
                         <BarChart
                             width={500}
@@ -72,8 +61,11 @@ const TsrBarChart = ({ tsrBarChartYear }) => {
                                 bottom: 10,
                             }}
                         >
-                            <YAxis domain={minMaxValues}
-                                tickCount={"14"}
+                            <YAxis domain={[
+                                Math.floor(Math.min(...data.map(entry => parseFloat(entry.TSR)))),
+                                Math.ceil(Math.max(...data.map(entry => parseFloat(entry.TSR))))
+                            ]}
+                                tickCount={"12"}
                                 tickFormatter={tick => `${tick}%`} />
                             <Tooltip content={<CustomTooltip />} />
                             <ReferenceLine y={0} stroke="gray" />

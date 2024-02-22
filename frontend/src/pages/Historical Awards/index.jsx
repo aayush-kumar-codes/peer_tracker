@@ -1,5 +1,4 @@
 import { useContext} from "react";
-import NewmontLogo from "../../assets/NewmontLogo.png";
 import HistoricalAwardsSummarySeventeenToSixteen from "../../components/historicalAwardSummary17-16.jsx/index.jsx";
 import HistoricalAwardsSummaryTwentyToEighteen from "../../components/historicalAwardSummary20-18.jsx";
 import { MyContext } from "../../context/AuthProvider.jsx";
@@ -25,14 +24,11 @@ const HistoricalAwards = () => {
 
 
     return (
-        <div className="px-8">
+        <div className="px-8 max-w-6xl mx-auto">
             <div className="flex justify-between items-center py-8">
-                <div className="text-3xl">
+                <div className="text-3xl text-white">
                     {summaryDataYear2023?.List?.map((ele, i) => <p key={i}>Calculations as of {ele.DisplayDateString}</p>)}
                 </div>
-                {/* <div>
-                    <img src={NewmontLogo} alt="NewmontLogo" />
-                </div> */}
             </div> 
             <div className="flex justify-between w-[100%] px-4">
                 {DataYearWise.map((ele) => {
@@ -45,14 +41,14 @@ const HistoricalAwards = () => {
                     )
                 })}
             </div>
-            <div className="flex w-[100%] px-4 py-10 gap-14">
-                <div className="w-[30%] text-center">
+            {/* <div className="flex w-[100%] px-4 py-10">
+                <div className="w-[31%] text-center mx-4">
                     <HistoricalAwardsSummarySeventeenToSixteen historicalData={historicalDataYear2017} />
                 </div>
-                <div className="w-[30%] text-center">
+                <div className="w-[31%] text-center mx-4">
                     <HistoricalAwardsSummarySeventeenToSixteen historicalData={historicalDataYear2016} />
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };
