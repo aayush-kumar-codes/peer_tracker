@@ -1,4 +1,4 @@
-import { useContext} from "react";
+import { useContext } from "react";
 import HistoricalAwardsSummarySeventeenToSixteen from "../../components/historicalAwardSummary17-16.jsx/index.jsx";
 import HistoricalAwardsSummaryTwentyToEighteen from "../../components/historicalAwardSummary20-18.jsx";
 import { MyContext } from "../../context/AuthProvider.jsx";
@@ -29,7 +29,7 @@ const HistoricalAwards = () => {
                 <div className="text-3xl text-white">
                     {summaryDataYear2023?.List?.map((ele, i) => <p key={i}>Calculations as of {ele.DisplayDateString}</p>)}
                 </div>
-            </div> 
+            </div>
             <div className="flex justify-between w-[100%] px-4">
                 {DataYearWise.map((ele) => {
                     return (
@@ -41,14 +41,14 @@ const HistoricalAwards = () => {
                     )
                 })}
             </div>
-            {/* <div className="flex w-[100%] px-4 py-10">
+            <div className="flex w-[100%] px-4 py-10">
                 <div className="w-[31%] text-center mx-4">
                     <HistoricalAwardsSummarySeventeenToSixteen historicalData={historicalDataYear2017} />
                 </div>
                 <div className="w-[31%] text-center mx-4">
                     <HistoricalAwardsSummarySeventeenToSixteen historicalData={historicalDataYear2016} />
                 </div>
-            </div> */}
+            </div>
         </div>
     );
 };

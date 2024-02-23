@@ -10,7 +10,6 @@ import DownloadHistoTsrFileData from "../../components/FyAward/DownloadHistoTsrF
 import DownloadPeerTsrFileData from "../../components/FyAward/DownloadPeerTsrFileData";
 import DownloadTsrFileData from "../../components/FyAward/DownloadTsrFileData";
 
-
 const FY2023Award = () => {
     const {
         tsrChartYear2023,

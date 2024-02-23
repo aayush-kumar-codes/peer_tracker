@@ -1,6 +1,7 @@
 import json
 from django.http import JsonResponse
 from rest_framework.views import APIView
+import pandas as pd
 
 
 def read_file_data(filename):
@@ -215,3 +216,62 @@ class SharePriceData(APIView):
             return JsonResponse(json_data, status=200)
         except Exception as e:
             return JsonResponse({"Error": str(e)}, status=500)
+
+class DownloadPeerTSR(APIView):
+    def post(self, request):
+        data = request.data
+        if data['id'] == 4386:
+            filename = 'dummy_data/PeerTSRs1.xlsx'
+        elif data['id'] == 4092:
+            filename = 'dummy_data/PeerTSRs2.xlsx'
+        elif data['id'] == 3714:
+            filename = 'dummy_data/PeerTSRs3.xlsx'
+
+        # Read the Excel file into a pandas DataFrame
+        df = pd.read_excel(filename)
+
+        # Convert the DataFrame to a JSON object
+        json_data = df.to_json(orient='records')
+
+        # Return the JSON response
+        return JsonResponse(json_data, safe=False)
+
+
+class DownloadHistoTSR(APIView):
+    def post(self, request):
+        data = request.data
+        if data['id'] == 4386:
+            filename = 'dummy_data/HistoricalTSRs1.xlsx'
+        elif data['id'] == 4092:
+            filename = 'dummy_data/HistoricalTSRs2.xlsx'
+        elif data['id'] == 3714:
+            filename = 'dummy_data/HistoricalTSRs3.xlsx'
+
+        # Read the Excel file into a pandas DataFrame
+        df = pd.read_excel(filename)
+
+        # Convert the DataFrame to a JSON object
+        json_data = df.to_json(orient='records')
+
+        # Return the JSON response
+        return JsonResponse(json_data, safe=False)
+
+
+class DownloadTSRCalc(APIView):
+    def post(self, request):
+        data = request.data
+        if data['id'] == 4386:
+            filename = 'dummy_data/TSRCalculationDetails1.xlsx'
+        elif data['id'] == 4092:
+            filename = 'dummy_data/TSRCalculationDetails2.xlsx'
+        elif data['id'] == 3714:
+            filename = 'dummy_data/TSRCalculationDetails3.xlsx'
+
+        # Read the Excel file into a pandas DataFrame
+        df = pd.read_excel(filename)
+
+        # Convert the DataFrame to a JSON object
+        json_data = df.to_json(orient='records')
+
+        # Return the JSON response
+        return JsonResponse(json_data, safe=False)

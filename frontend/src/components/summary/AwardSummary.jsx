@@ -21,7 +21,7 @@ const AwardSummary = ({ summaryData }) => {
                 summaryData && summaryData.List?.map((ele, i) => {
                     return (
                         <Fragment key={i}>
-                            <Link to={`/${ele.AwardName.replace(/\s/g, "")}`} className="text-white text-2xl flex items-center justify-center font-medium hover:text-[#E61B22]">{ele.AwardName}<BsInfoLg size={30} color="#fff" /></Link>
+                            <Link to={`/${ele.AwardName.replace(/\s/g, "")}`} className="text-white text-2xl flex items-center justify-center font-medium hover:text-[#E61B22]">{ele.AwardName}<BsInfoLg size={30} color="#fff"/></Link>
                             <div className=" border border-gray-400 bg-[#3a879e] text-white text-xl py-2 rounded-lg mt-2">
                                 <p >TSR: {ele.ClientTSR}</p>
                                 <p className=" text-lg">{ele.Percentile} Percentile</p>

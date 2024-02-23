@@ -6,7 +6,7 @@
         {
           "PeerName": "Compañía de Minas Buenaventura S.A.A.",
           "TSR": 0.955087986034,
-          "color": "#F01B0C"
+          "color": "#4f372d"
         },
         {
           "PeerName": "Harmony Gold Mining Company Limited",
@@ -239,6 +239,22 @@
           "color": "#081078"
         }
       ]
+    },
+    {
+      "key": "NEM -42.62%",
+      "color": "#0BB30B"
+    },
+    {
+      "key": ">= 100th Percentile",
+      "color": "#4f372d"
+    },
+    {
+      "key": ">= 25th Percentile",
+      "color": "#8C0855"
+    },
+    {
+      "key": "< 25th Percentile",
+      "color": "#081078"
     }
   ]
 }

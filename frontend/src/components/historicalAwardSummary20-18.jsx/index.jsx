@@ -18,7 +18,7 @@ const HistoricalAwardsSummaryTwentyToEighteen = ({ historicalData }) => {
   const [inputData, setInputData] = useState("")
   const [tableDataShow, setTableDataShow] = useState(false)
   const [accorId, setAccorId] = useState(null)
-  const iconClass = " bg-violet-500 shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75 cursor-pointer rounded-md"
+  const iconClass = " bg-[#031A31] shadow-md hover:bg-[#031D37] focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75 cursor-pointer rounded-md"
   const handleAccor = (id) => {
     if (accorId === id) {
       setTableDataShow(!tableDataShow)
@@ -53,7 +53,7 @@ const HistoricalAwardsSummaryTwentyToEighteen = ({ historicalData }) => {
                 <input type="number" value={inputData} onChange={(e) => setInputData(e.target.value)} name="customInput0" min="0" placeholder="Input Target Shares" className="border border-gray-400  rounded-md bg-gray-200 text-lg p-[2px] pl-1 [-moz-appearance:_textfield] [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none" />
               </div>
             </Fragment>
-          )
+          ) 
         })
       }
       {tableDataShow && (

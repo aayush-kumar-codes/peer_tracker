@@ -9,7 +9,7 @@
 }
 
 body{
-    background: linear-gradient(rgba(4, 37, 70, 0.8), rgba(1, 15, 29, 0.8)), url("./assets/LeaseSCRE.png");
+    background: linear-gradient(rgba(4, 37, 70, 0.8), rgba(1, 15, 29, 0.8)), url("./assets/bg2.jpg");
     background-repeat: no-repeat;
     object-fit: cover;
 }

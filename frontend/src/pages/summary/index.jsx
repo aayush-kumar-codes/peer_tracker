@@ -12,7 +12,7 @@ const Summary = () => {
           {summaryDataYear2023?.List?.map((ele, i) => <p key={i}>Calculations as of {ele.DisplayDateString}</p>)}
         </div>
       </div>
-      <div className="flex justify-between w-[100%] px-4">
+      <div className="flex justify-between w-[100%] px-4 pb-8">
         <AwardSummary summaryData={summaryDataYear2023} />
         <AwardSummary summaryData={summaryDataYear2022} />
         <AwardSummary summaryData={summaryDataYear2021} />

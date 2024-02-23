@@ -239,6 +239,22 @@
           "color": "#081078"
         }
       ]
+    },
+    {
+      "key": "NEM -28.27%",
+      "color": "#0BB30B"
+    },
+    {
+      "key": ">= 80th Percentile",
+      "color": "#F01B0C"
+    },
+    {
+      "key": ">= 25th Percentile",
+      "color": "#8C0855"
+    },
+    {
+      "key": "< 25th Percentile",
+      "color": "#081078"
     }
   ]
 }

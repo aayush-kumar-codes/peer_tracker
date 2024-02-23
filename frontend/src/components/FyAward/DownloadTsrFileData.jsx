@@ -29,13 +29,13 @@ const DownloadTsrFileData = ({ TSRFileYear }) => {
         <>
             <button
                 disabled={downloadTsrBtnStatus}
-                // onClick={() => convertToJsonAndDownloadExcel(fileData.length > 0 && fileData)}
+                onClick={() => convertToJsonAndDownloadExcel(fileData.length > 0 && fileData)}
                 className={`bg-[#3A879E] text-white py-2 px-3 rounded-md font-bold flex items-center gap-1 hover:bg-[#396b9a]
-            ${downloadTsrBtnStatus ? 'cursor-not-allowed' : 'cursor-pointer'}`}
-                // title={downloadTsrBtnStatus ? "Please wait..." : ""}
+                ${downloadTsrBtnStatus ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                title={downloadTsrBtnStatus ? "Please wait..." : ""}
             >
                 <span className="ml-2">TSR File</span>
-                {/* {!downloadTsrBtnStatus && <MdFileDownload />} */}
+                {!downloadTsrBtnStatus && <MdFileDownload />}
             </button>
         </>
     )

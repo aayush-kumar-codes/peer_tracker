@@ -21,7 +21,7 @@ const HistoricalTSRTable = ({ tableDataShow }) => {
                             // const backgroundColor = ele.PeerName === "Newmont" ? "#73E11B" : backgroundColor1;
 
                             return (
-                                <tr key={i} className={isBgColor ? "bg-[#E6F3F6] text-black" : "bg-[#393d47] text-white"}>
+                                <tr key={i} className={isBgColor ? "bg-[#E6F3F6] text-black" : "text-white"}>
                                     <td className='pl-1 text-left py-1 '>{ele.PeerName}</td>
                                     <td className="align-right py-1 text-right pr-1">{((ele.TSR) * 100).toFixed(2) + "%"}</td>
                                 </tr>

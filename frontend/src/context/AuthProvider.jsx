@@ -132,6 +132,7 @@ const ContextProvider = ({ children }) => {
             await fetchTsrChartData(val)
         ))
         Promise.all(data).then((values) => {
+            // console.log(values,"$$$$$$$$$$$$$$$$$$$$$$$4444");
             setTsrChartYear2023(values[0])
             setTsrChartYear2022(values[1])
             setTsrChartYear2021(values[2])
@@ -247,6 +248,7 @@ const ContextProvider = ({ children }) => {
             await downloadTsrFile(val)
         ))
         Promise.all(data).then((values) => {
+            // console.log(values,"7777777777777777777");
             setDownloadTsrFile2023(values[0])
             setDownloadTsrFile2022(values[1])
             setDownloadTsrFile2021(values[2])

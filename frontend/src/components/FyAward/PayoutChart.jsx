@@ -66,11 +66,6 @@ const PayoutChart = ({ payoutChartYear }) => {
         }
     }, [payoutChartYear])
 
-    console.log(dataSets, "@@@@@@@@@@@@@@@@@2");
-    console.log(Math.min(...dataSets.flatMap(dataset => dataset.data)), "%%%%%%%%%%%%%%%%%5");
-    console.log(Math.max(...dataSets.flatMap(dataset => dataset.data)), "##############333333");
-
-
     const options = {
         responsive: true,
         plugins: {
