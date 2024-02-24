@@ -106,7 +106,7 @@ const PayoutChart = ({ payoutChartYear }) => {
         <>
             {loading ?
                 <div>
-                    <p>Loading Payout History....</p>
+                    <p className="text-white">Loading Payout History....</p>
                 </div>
                 : <div className=" bg-[#E6F3F6] py-3 px-4 rounded-xl">
                     <Line data={data} options={options} />

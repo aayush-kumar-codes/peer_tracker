@@ -11,34 +11,40 @@ import {
 } from "recharts";
 
 const TsrBarChart = ({ tsrBarChartYear }) => {
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [legendData, setLegendData] = useState([]);
-  
-    const fetchTsrBarChartData = (tsrBarChartYear) => {
-      if (!tsrBarChartYear || !tsrBarChartYear.List || !tsrBarChartYear.List[0] || !tsrBarChartYear.List[0].TSRs) {
-        setData([]);
-        setLoading(false);
-        return;
-      }
-  
-      const chartData = tsrBarChartYear.List[0].TSRs.map((dataPoint) => ({
-        name: dataPoint.PeerName,
-        TSR: (dataPoint.TSR * 100).toFixed(2),
-        color: dataPoint.color,
-      }));
-  
-      setData(chartData);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [legendData, setLegendData] = useState([]);
+
+  const fetchTsrBarChartData = (tsrBarChartYear) => {
+    if (
+      !tsrBarChartYear ||
+      !tsrBarChartYear.List ||
+      !tsrBarChartYear.List[0] ||
+      !tsrBarChartYear.List[0].TSRs
+    ) {
+      setData([]);
       setLoading(false);
-  
-      const legendData = tsrBarChartYear?.List.slice(1, 5).map(({ key, color }) => ({
+      return;
+    }
+
+    const chartData = tsrBarChartYear.List[0].TSRs.map((dataPoint) => ({
+      name: dataPoint.PeerName,
+      TSR: (dataPoint.TSR * 100).toFixed(2),
+      color: dataPoint.color,
+    }));
+
+    setData(chartData);
+    setLoading(false);
+
+    const legendData = tsrBarChartYear?.List.slice(1, 5).map(
+      ({ key, color }) => ({
         value: key,
-        type: 'rect',
+        type: "rect",
         color,
-      }));
-      setLegendData(legendData);
-    };
-  
+      })
+    );
+    setLegendData(legendData);
+  };
 
   useEffect(() => {
     if (tsrBarChartYear) {
@@ -62,7 +68,7 @@ const TsrBarChart = ({ tsrBarChartYear }) => {
     <>
       {loading ? (
         <div>
-          <p>Loading Peer History....</p>
+          <p className="text-white">Loading Peer History....</p>
         </div>
       ) : (
         <div className="h-[450px] p-4 bg-[#E6F3F6] rounded-xl">
@@ -92,9 +98,7 @@ const TsrBarChart = ({ tsrBarChartYear }) => {
               />
               <Tooltip content={<CustomTooltip />} />
               <ReferenceLine y={0} stroke="gray" />
-              <Legend
-                payload={legendData}
-              />
+              <Legend payload={legendData} />
               <Bar dataKey="TSR">
                 {data.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={entry.color} />

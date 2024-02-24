@@ -2,6 +2,7 @@ import { IoIosArrowDropupCircle } from "react-icons/io";
 import SocialMedia from "./SocialMedia";
 import FooterNavLink from "./FooterNavLink";
 import AmLogo from "../Amlogo";
+import Form from "./Form";
 
 const Footer = () => {
   const handleScrollToTop = () => {
@@ -13,27 +14,11 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="text-[#fff]  bg-[#0c192e] mt-8 py-4 ">
-        <div className="mx-auto flex max-w-6xl border-b-[1px] border-white h-[120px] justify-between items-end py-2 ">
+      <footer className="text-[#fff]  bg-[#0c192e] mt-[110px] py-8 ">
+        <div className="mx-auto flex max-w-7xl border-b-[1px] border-white justify-between items-end py-2 ">
           <AmLogo />
           <FooterNavLink />
-          <div className="flex flex-col items-center pt-4">
-            <div class="flex items-center">
-              <input
-                type="email"
-                class="min-h-10 w-64 px-4 text-white text-base border border-[#3A879E] rounded-l-md bg-transparent focus:border-blue-500 focus:outline-none"
-                id="Email"
-                name="Email"
-                placeholder="Enter Your Email"
-                autocomplete="off"
-              />
-              <input
-                class="min-h-10 px-4 border-none border-l-0 rounded-r-md bg-[#3A879E] text-white text-base cursor-pointer transition-colors duration-300 hover:bg-[#396b9a]"
-                value="Subscribe"
-                type="submit"
-              />
-            </div>
-          </div>
+          <Form />
           <SocialMedia />
         </div>
         <p className="text-[#fff]  text-center text-[12px] pt-3">
@@ -42,7 +27,7 @@ const Footer = () => {
         </p>
       </footer>
       <div
-        className="group fixed right-6 bottom-1 inline-flex items-center justify-center p-0.5 mb-2 mr-2 text-sm font-medium cursor-pointer"
+        className="group fixed right-6 bottom-10 inline-flex items-center justify-center p-0.5 mb-2 mr-2 text-sm font-medium cursor-pointer"
         onClick={handleScrollToTop}
       >
         <span className="relative transition-all ease-in duration-75 rounded-md group-hover:bg-opacity-0 text-yellow-400">

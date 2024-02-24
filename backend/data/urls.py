@@ -3,10 +3,20 @@ from django.urls import path
 from .views import (
     CompTSRData, PayoutData, PercentilesData, SharePriceData,
     TsrData, SummaryCalcData, SummaryPercentData, SummaryPData,
-    DownloadPeerTSR, DownloadHistoTSR, DownloadTSRCalc
+    DownloadPeerTSR, DownloadHistoTSR, DownloadTSRCalc, LoginAPI,
+    LogoutAPI
+)
+from rest_framework_simplejwt.views import (
+    TokenRefreshView
 )
 
+
 urlpatterns = [
+    path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
+    path('login/', LoginAPI.as_view(), name='login'),
+    path('logout/', LogoutAPI.as_view(), name='logout'),
+
     path('histo_tsr/', CompTSRData.as_view(), name='comp_tsr'),
     path('payout/', PayoutData.as_view(), name='payout'),
     path('percentile/', PercentilesData.as_view(), name='percentile'),

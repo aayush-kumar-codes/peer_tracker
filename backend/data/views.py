@@ -2,6 +2,45 @@ import json
 from django.http import JsonResponse
 from rest_framework.views import APIView
 import pandas as pd
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework import permissions
+from django.contrib.auth import logout
+from .models import User
+from django.contrib.auth.hashers import check_password
+
+
+class LoginAPI(APIView):
+    permission_classes = (permissions.AllowAny,)
+
+    def post(self, request):
+        email = request.data.get('email')
+        password = request.data.get('password')
+
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            return JsonResponse({'error': 'User with this email does not exist'}, status=404)
+
+        if check_password(password, user.password):
+            refresh = RefreshToken.for_user(user)
+            return JsonResponse({
+                "id": user.id,
+                'email': user.email,
+                'tokens': {
+                    'refresh': str(refresh),
+                    'access': str(refresh.access_token),
+                }
+            })
+        else:
+            return JsonResponse({'error': 'Invalid password'}, status=401)
+
+
+class LogoutAPI(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request, *args):
+        logout(request)
+        return JsonResponse({"message": "Logout successfully.", "status": 200}, status=200)
 
 
 def read_file_data(filename):
@@ -19,6 +58,7 @@ def serialize_to_json(data):
 
 
 class CompTSRData(APIView):
+    permission_classes = [permissions.IsAuthenticated]
     def post(self, request):
         data = request.data
         if 'id' not in data:
@@ -43,6 +83,8 @@ class CompTSRData(APIView):
 
 
 class PayoutData(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
     def post(self, request):
         data = request.data
         if 'id' not in data:
@@ -67,6 +109,8 @@ class PayoutData(APIView):
 
 
 class PercentilesData(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
     def post(self, request):
         data = request.data
         if data['id']==4386:
@@ -89,6 +133,8 @@ class PercentilesData(APIView):
 
 
 class TsrData(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
     def post(self, request):
         data = request.data
         if 'id' not in data:
@@ -123,6 +169,8 @@ class TsrData(APIView):
 
 
 class SummaryCalcData(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
     def post(self, request):
         data = request.data
         if 'id' not in data:
@@ -147,6 +195,8 @@ class SummaryCalcData(APIView):
 
 
 class SummaryPercentData(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
     def post(self, request):
         data = request.data
         if 'id' not in data:
@@ -171,6 +221,8 @@ class SummaryPercentData(APIView):
         
 
 class SummaryPData(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
     def post(self, request):
         data = request.data
         if 'id' not in data:
@@ -205,6 +257,8 @@ class SummaryPData(APIView):
 
 
 class SharePriceData(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
     def post(self, request):
         filename = 'SharePrice.txt'
         data = read_file_data(filename)
@@ -218,6 +272,8 @@ class SharePriceData(APIView):
             return JsonResponse({"Error": str(e)}, status=500)
 
 class DownloadPeerTSR(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
     def post(self, request):
         data = request.data
         if data['id'] == 4386:
@@ -238,6 +294,8 @@ class DownloadPeerTSR(APIView):
 
 
 class DownloadHistoTSR(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
     def post(self, request):
         data = request.data
         if data['id'] == 4386:
@@ -258,6 +316,8 @@ class DownloadHistoTSR(APIView):
 
 
 class DownloadTSRCalc(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
     def post(self, request):
         data = request.data
         if data['id'] == 4386:
