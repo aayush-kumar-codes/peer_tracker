@@ -29,5 +29,6 @@ This script is designed to scrape and save logos from a website. Below are the s
 You can run the script using the following command:
 
 ```bash
-python main.py
+python main.py <user_id>
 ```
+## Note: user_id is the max number of user ID.
